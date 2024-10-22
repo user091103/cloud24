@@ -2,5 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
  */
-console.log("Hello");
+let click_button = document.getElementById("click_button");
+click_button.addEventListener("click", function () {
+    alert("Hi");
+    click_button.style.background = 'red';
+
+});
 
