@@ -27,7 +27,8 @@ click_button.addEventListener("click", function () {
 
                 // Hiển thị thời gian local
                 console.log("Local time: " + localTime);
-                local_time.textContent = "Local time: " + localTime.toLocaleString(); // Hiển thị thời gian local
+                //local_time.textContent = "Local time: " + localTime.toLocaleString(); // Hiển thị thời gian local
+                console.log("Local time: " + localTime.toLocaleString());
 
             })
             .catch(error => console.error('Error:', error));
