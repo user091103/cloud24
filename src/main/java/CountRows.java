@@ -16,9 +16,10 @@ public class CountRows extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(resp.getOutputStream(), "UTF-8"));
-
+        
         resp.setContentType("text/plain");
         resp.setStatus(200);
+         resp.addDateHeader("time", System.currentTimeMillis());
         writer.write("Hi!");
         writer.flush();
         writer.close();
