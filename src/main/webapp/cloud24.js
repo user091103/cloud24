@@ -4,8 +4,13 @@
  */
 let click_button = document.getElementById("click_button");
 click_button.addEventListener("click", function () {
-    alert("Hi");
-    click_button.style.background = 'red';
-
+   time();
 });
 
+function time() {
+var currentdate = new Date(); 
+var timenow = + currentdate.getHours() + ":"  
+            + currentdate.getMinutes() + ":" 
+            + currentdate.getSeconds();
+  document.getElementById("datebtn").innerHTML = "time is ="+timenow;
+}
