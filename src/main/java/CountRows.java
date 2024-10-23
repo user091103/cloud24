@@ -25,7 +25,7 @@ public class CountRows extends HttpServlet {
 
         resp.setContentType("text/plain");
         resp.setStatus(200);
-        writer.write("Server time: " + formattedTime);
+        writer.write("( " + formattedTime + " )");
         writer.flush();
         writer.close();
     }
