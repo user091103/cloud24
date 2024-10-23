@@ -4,13 +4,7 @@
  */
 let click_button = document.getElementById("click_button");
 click_button.addEventListener("click", function () {
-   time();
+    var date = new Date();
+    click_button.document.write("Time is:" + date);
 });
 
-function time() {
-var currentdate = new Date(); 
-var timenow = + currentdate.getHours() + ":"  
-            + currentdate.getMinutes() + ":" 
-            + currentdate.getSeconds();
-  document.getElementById("datebtn").innerHTML = "time is ="+timenow;
-}
