@@ -13,10 +13,6 @@ click_button.addEventListener("click", function () {
                 console.log(server_time);
                 const local_time = new Date(server_time);
                 alert(local_time);
-                let serverTime = new Date(server_time);
-                console.log("Server UTC time: " + serverTime.toISOString());
-                let localTime = new Date(serverTime.getTime() - (serverTime.getTimezoneOffset() * 60000));
-                console.log("Local time: " + localTime.toLocaleString("en-US", { timeZoneName: "short" }));
                 console.log(local_time);
             })
             .catch(error => console.error('Error:', error));
