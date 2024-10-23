@@ -21,6 +21,8 @@ public class ServerTime extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        
+        Instant instant = Instant.now() ;
         ZonedDateTime currentTime = ZonedDateTime.now();
         String formattedDateTime = currentTime.format(DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy z"));
         
@@ -29,6 +31,7 @@ public class ServerTime extends HttpServlet {
         resp.setContentType("text/plain");
         resp.setStatus(200);
         writer.write("Server time: " + formattedDateTime);
+        writer.write("Server time: " + instant);
         writer.flush();
         writer.close();
     }
