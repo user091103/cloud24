@@ -19,7 +19,7 @@ public class ServerTime extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         ZonedDateTime currentTime = ZonedDateTime.now();
-        String formattedDateTime = currentTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss z"));
+        String formattedDateTime = currentTime.format(DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy z"));
         
         
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(resp.getOutputStream(), "UTF-8"));
