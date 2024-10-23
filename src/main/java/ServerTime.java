@@ -18,13 +18,12 @@ public class ServerTime extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         LocalTime currentTime = LocalTime.now();
-        String formattedTime = currentTime.format(DateTimeFormatter.ofPattern("HH:mm")); 
 
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(resp.getOutputStream(), "UTF-8"));
 
         resp.setContentType("text/plain");
         resp.setStatus(200);
-        writer.write("( " + formattedTime + " )");
+        writer.write("( " + currentTime + " )");
         writer.flush();
         writer.close();
     }
