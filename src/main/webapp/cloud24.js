@@ -9,7 +9,8 @@ click_button.addEventListener("click", function () {
     fetch('/cloud24/server_time')
             .then(response => response.text())
             .then(data => {
-                console.log(data+'+7');
+                console.log(data);
+                console.log(data.toLocaleString());
                 
             })
             .catch(error => console.error('Error:', error));
