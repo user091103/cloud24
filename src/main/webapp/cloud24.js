@@ -8,10 +8,10 @@ let local_time = document.getElementById("local_time");
 click_button.addEventListener("click", function () {
     fetch('/cloud24/server_time')
             .then(response => response.text())
-            .then(data => {
-                console.log(data);
-                console.log(data.toLocaleString());
+            .then(server_time_utc => {
+                 alert(new Date(server_time_utc));
                 
+               
             })
             .catch(error => console.error('Error:', error));
 });

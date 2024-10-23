@@ -23,16 +23,12 @@ public class ServerTime extends HttpServlet {
 
         
         Instant instant = Instant.now() ;
-        ZonedDateTime currentTime = ZonedDateTime.now();
-        String formattedDateTime = currentTime.format(DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy z"));
         
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(resp.getOutputStream(), "UTF-8"));
 
         resp.setContentType("text/plain");
         resp.setStatus(200);
-        writer.write("Server time: " + formattedDateTime);
-        writer.write("\n");
-        writer.write("Server time: " + instant.toEpochMilli());
+        writer.write( instant.toString());
         writer.flush();
         writer.close();
     }
