@@ -1,9 +1,16 @@
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
- */
+
 
 let click_button = document.getElementById("click_button");
+let server_time = document.getElementById("server_time");
+
+
 click_button.addEventListener("click", function () {
-   
+    fetch('/server_time')
+            .then(response => response.text()) 
+            .then(data => {
+                console.log(data); 
+                server_time.textContent = data; 
+            })
+            .catch(error => console.error('Error:', error));
+
 });
