@@ -18,15 +18,15 @@ public class ServerTime extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        LocalTime currentTime = LocalTime.now();
-        ZonedDateTime DateTime = ZonedDateTime.now();
-
+        ZonedDateTime currentTime = ZonedDateTime.now();
+        String formattedDateTime = currentTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss z"));
+        
+        
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(resp.getOutputStream(), "UTF-8"));
 
         resp.setContentType("text/plain");
         resp.setStatus(200);
-        writer.write("( " + currentTime + " )");
-        writer.write("( " + DateTime + " )");
+        writer.write("Server time: " + formattedDateTime);
         writer.flush();
         writer.close();
     }
