@@ -8,6 +8,5 @@ let hour = h.getHours();
 let minute = m.getMinutes();
 let click_button = document.getElementById("click_button");
 click_button.addEventListener("click", function () {
-    console.log(hour);
-    console.log(minute);
+    console.log(hour + " : " + minute);
 });
