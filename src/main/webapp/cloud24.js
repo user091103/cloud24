@@ -10,7 +10,6 @@ click_button.addEventListener("click", function () {
             .then(response => response.text())
             .then(data => {
                 console.log(data);
-                server_time.textContent = data;
 
                 // Tách chuỗi để lấy phần thời gian từ server
                 let serverTimeStr = data.replace("Server date and time: ", "").trim(); // "2024-10-23 14:30:15 UTC"
@@ -27,7 +26,7 @@ click_button.addEventListener("click", function () {
 
                 // Hiển thị thời gian local
                 console.log("Local time: " + localTime);
-                local_time.textContent = "Local time: " + localTime.toLocaleString(); // Hiển thị thời gian local
+                console.log("Local time: " + localTime.toLocaleString()); // Hiển thị thời gian local
 
             })
             .catch(error => console.error('Error:', error));
