@@ -32,7 +32,7 @@ public class ServerTime extends HttpServlet {
         resp.setStatus(200);
         writer.write("Server time: " + formattedDateTime);
         writer.write("\n");
-        writer.write("Server time: " + instant);
+        writer.write("Server time: " + instant.toEpochMilli());
         writer.flush();
         writer.close();
     }
