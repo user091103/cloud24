@@ -31,6 +31,7 @@ public class ServerTime extends HttpServlet {
         resp.setContentType("text/plain");
         resp.setStatus(200);
         writer.write("Server time: " + formattedDateTime);
+        writer.write("\n");
         writer.write("Server time: " + instant);
         writer.flush();
         writer.close();
