@@ -11,6 +11,7 @@ click_button.addEventListener("click", function () {
             .then(data => {
                 alert(data);
             })
+            .then(response => response.text())
             .then(server_time_utc =>{
                 alert(new Date(server_time_utc));
             })
