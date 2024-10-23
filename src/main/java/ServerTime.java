@@ -23,7 +23,6 @@ public class ServerTime extends HttpServlet {
 
         
         Instant instant = Instant.now() ;
-        
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(resp.getOutputStream(), "UTF-8"));
 
         resp.setContentType("text/plain");
