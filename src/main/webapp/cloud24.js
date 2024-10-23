@@ -27,7 +27,7 @@ async function getTime() {
       throw new Error(`Response status: ${response.status}`);
     }
 
-    const time = await response.json();
+    const time = await response;
     console.log(time);
   } catch (error) {
     console.error(error.message);
