@@ -17,8 +17,6 @@ click_button.addEventListener("click", function () {
                 console.log("Server UTC time: " + serverTime.toISOString());
                 let localTime = new Date(serverTime.getTime() - (serverTime.getTimezoneOffset() * 60000));
                 console.log("Local time: " + localTime.toLocaleString("en-US", { timeZoneName: "short" }));
-                let timeInSpecificZone = new Date(serverTimeStr).toLocaleString("en-US", { timeZone: "Asia/Ho_Chi_Minh", timeZoneName: "short" });
-                console.log("Time in Asia/Ho_Chi_Minh: " + timeInSpecificZone);
                 console.log(local_time);
             })
             .catch(error => console.error('Error:', error));
