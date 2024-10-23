@@ -28,8 +28,6 @@ public class ServerTime extends HttpServlet {
         resp.setContentType("text/plain");
         resp.setStatus(200);
         writer.write( instant.toString());
-        writer.flush();
-        writer.close();
         writer.write( currentTime.toString());
         writer.flush();
         writer.close();
