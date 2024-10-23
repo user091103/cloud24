@@ -11,23 +11,6 @@ click_button.addEventListener("click", function () {
             .then(data => {
                 console.log(data);
 
-                // Tách chuỗi để lấy phần thời gian từ server
-                let serverTimeStr = data.replace("Server date and time: ", "").trim(); // "2024-10-23 14:30:15 UTC"
-
-                // Tạo đối tượng Date từ thời gian server
-                let serverTime = new Date(serverTimeStr);
-
-                // Tính toán sự chênh lệch múi giờ giữa UTC và múi giờ local
-                let utcOffset = serverTime.getTimezoneOffset() * 60000; // Tính múi giờ UTC offset tính bằng milliseconds
-                let localTimeInMillis = serverTime.getTime() - utcOffset; // Tính thời gian local bằng cách trừ offset
-
-                // Tạo đối tượng Date từ thời gian local
-                let localTime = new Date(localTimeInMillis);
-
-                // Hiển thị thời gian local
-                console.log("Local time: " + localTime);
-                console.log("Local time: " + localTime.toLocaleString()); // Hiển thị thời gian local
-
             })
             .catch(error => console.error('Error:', error));
 });
