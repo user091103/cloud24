@@ -19,14 +19,13 @@ public class CountRows extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         LocalTime currentTime = LocalTime.now(); // Sử dụng lớp LocalTime để lấy giờ hiện tại
-        String formattedTime = currentTime.format(DateTimeFormatter.ofPattern("HH:mm:ss")); // Định dạng thành "giờ:phút:giây"
+        String formattedTime = currentTime.format(DateTimeFormatter.ofPattern("HH:mm")); // Định dạng thành "giờ:phút:giây"
 
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(resp.getOutputStream(), "UTF-8"));
 
         resp.setContentType("text/plain");
         resp.setStatus(200);
         writer.write("Server time: " + formattedTime);
-        writer.write("Hi!");
         writer.flush();
         writer.close();
     }
